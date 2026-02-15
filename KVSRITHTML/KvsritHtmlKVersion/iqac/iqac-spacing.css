@@ -1,0 +1,631 @@
+/* ============================================
+   IQAC Page - Professional Layout & Styling
+   ============================================
+   
+   Purpose: Complete restructuring for professional appearance
+   Scope: IQAC page only - does not affect other pages
+   ============================================ */
+
+/* ============================================
+   LAYOUT SYSTEM
+   ============================================ */
+
+/* Smooth Scrolling with Offset */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+/* Main Content Wrapper */
+.iqac-page-wrapper {
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* Two-Column Layout Container */
+.iqac-layout-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.iqac-hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.iqac-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.iqac-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.iqac-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.iqac-breadcrumb a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.iqac-breadcrumb a:hover {
+    color: #fff;
+}
+
+.iqac-hero h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.iqac-hero-description {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    max-width: 800px;
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION
+   ============================================ */
+
+.iqac-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.iqac-nav-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.iqac-nav-header {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.iqac-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.iqac-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.iqac-nav-link:hover {
+    background: #f3f4f6;
+    color: #2563eb;
+    border-left-color: #93c5fd;
+}
+
+.iqac-nav-link.active {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    color: #1d4ed8;
+    font-weight: 600;
+    border-left-color: #2563eb;
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.1);
+}
+
+.iqac-nav-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.iqac-nav-count {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+.iqac-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Page Introduction Card */
+.iqac-intro-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.iqac-intro-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.iqac-intro-card p {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Content Sections */
+.iqac-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: 120px;
+}
+
+.iqac-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.iqac-section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.iqac-section-number.blue {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+}
+
+.iqac-section-number.green {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+}
+
+.iqac-section-number.purple {
+    background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+    color: #6b21a8;
+}
+
+.iqac-section-number.orange {
+    background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    color: #9a3412;
+}
+
+.iqac-section-number.indigo {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    color: #3730a3;
+}
+
+.iqac-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.iqac-section-content {
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.iqac-section-content p {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+}
+
+.iqac-section-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.iqac-section-content ul li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.iqac-section-content ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* ============================================
+   FUNCTION CARDS GRID
+   ============================================ */
+
+.iqac-functions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.iqac-function-card {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+}
+
+.iqac-function-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+}
+
+.iqac-function-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.iqac-function-card h3::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.iqac-function-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    margin: 0;
+}
+
+/* ============================================
+   TABLE STYLING
+   ============================================ */
+
+.iqac-table-wrapper {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.iqac-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.iqac-table thead {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+.iqac-table thead th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.iqac-table tbody tr {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.2s;
+}
+
+.iqac-table tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.iqac-table tbody tr:hover {
+    background: #f0f9ff;
+}
+
+.iqac-table tbody td {
+    padding: 1rem 1.25rem;
+    color: #4b5563;
+    font-size: 0.9375rem;
+}
+
+.iqac-table tbody td:first-child {
+    font-weight: 600;
+    color: #111827;
+}
+
+.iqac-table tbody td:last-child {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ============================================
+   DOCUMENT CARDS
+   ============================================ */
+
+.iqac-documents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.iqac-document-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.iqac-document-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.iqac-document-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.iqac-document-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.iqac-document-meta {
+    font-size: 0.8125rem;
+    color: #6b7280;
+}
+
+.iqac-document-icon {
+    width: 24px;
+    height: 24px;
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   MEETING MINUTES LIST
+   ============================================ */
+
+.iqac-minutes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.iqac-minute-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.iqac-minute-item:hover {
+    background: #f0f9ff;
+    border-color: #93c5fd;
+}
+
+.iqac-minute-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #374151;
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.iqac-minute-icon {
+    width: 18px;
+    height: 18px;
+    color: #6b7280;
+}
+
+.iqac-minute-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.iqac-minute-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .iqac-layout-container {
+        grid-template-columns: 240px 1fr;
+        gap: 2rem;
+    }
+
+    .iqac-section {
+        padding: 2rem;
+    }
+
+    .iqac-functions-grid,
+    .iqac-documents-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    .iqac-hero {
+        padding: 3rem 0;
+    }
+
+    .iqac-hero h1 {
+        font-size: 2rem;
+    }
+
+    .iqac-hero-description {
+        font-size: 1rem;
+    }
+
+    .iqac-layout-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .iqac-sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .iqac-nav-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .iqac-nav-link {
+        font-size: 0.875rem;
+        padding: 0.625rem 0.75rem;
+    }
+
+    .iqac-nav-count {
+        display: none;
+    }
+
+    .iqac-section {
+        padding: 1.5rem;
+    }
+
+    .iqac-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .iqac-section-title {
+        font-size: 1.5rem;
+    }
+
+    .iqac-functions-grid,
+    .iqac-documents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .iqac-table-wrapper {
+        font-size: 0.875rem;
+    }
+
+    .iqac-table thead th,
+    .iqac-table tbody td {
+        padding: 0.75rem 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .iqac-nav-list {
+        grid-template-columns: 1fr;
+    }
+
+    .iqac-section {
+        padding: 1.25rem;
+    }
+
+    .iqac-section-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.125rem;
+    }
+}

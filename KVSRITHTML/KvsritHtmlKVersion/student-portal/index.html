@@ -21,36 +21,27 @@
     <style>
         /* ========================================
            STUDENT PORTAL PAGE-SPECIFIC STYLES
-           These styles ONLY affect this page
+           Fixed for proper visibility and layout
         ======================================== */
 
+        /* CRITICAL FIX: Override body padding-top for this page only */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            padding: 0;
+            padding-top: 0 !important;
+            /* Remove default body padding, we'll handle spacing in hero */
         }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .gradient-overlay {
-            background: linear-gradient(to bottom, rgba(30, 58, 138, 0.4), rgba(30, 58, 138, 0.9));
-        }
-
-        /* CRITICAL FIX: Remove all default margins on main */
+        /* CRITICAL FIX: Ensure main content starts below fixed navbar */
         main {
-            margin: 0 !important;
+            margin-top: 124px !important;
+            /* 44px top bar + 80px main nav = 124px */
             padding: 0 !important;
         }
 
-        /* HERO SECTION - VISIBLE IMPROVEMENTS */
+        /* ===== HERO SECTION ===== */
         .student-portal-hero {
             background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%) !important;
-            padding: 80px 0 60px 0 !important;
-            /* Reduced top padding, visible change */
+            padding: 4rem 0 3rem 0 !important;
             margin: 0 !important;
             position: relative;
             z-index: 1;
@@ -60,7 +51,7 @@
             color: #ffffff !important;
             font-size: 3rem !important;
             font-weight: 800 !important;
-            margin: 0 0 20px 0 !important;
+            margin: 0 0 1.25rem 0 !important;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             line-height: 1.2 !important;
         }
@@ -73,125 +64,127 @@
             max-width: 600px !important;
         }
 
-        /* MAIN CONTENT AREA - VISIBLE GRID LAYOUT */
+        /* ===== MAIN CONTENT AREA ===== */
         .student-portal-content {
             background: #f9fafb !important;
-            padding: 50px 0 !important;
-            /* Reduced padding for tighter layout */
-            min-height: auto !important;
+            padding: 4rem 0 !important;
+            min-height: calc(100vh - 124px - 16rem) !important;
+            /* Ensure content fills viewport */
         }
 
         .student-portal-container {
-            max-width: 1200px !important;
+            max-width: 1280px !important;
             margin: 0 auto !important;
-            padding: 0 24px !important;
+            padding: 0 2rem !important;
         }
 
-        /* GRID LAYOUT - CLEAR 2-COLUMN STRUCTURE */
+        /* ===== GRID LAYOUT ===== */
         .student-portal-grid {
             display: grid !important;
             grid-template-columns: 2fr 1fr !important;
-            /* 2/3 cards, 1/3 sidebar */
-            gap: 30px !important;
+            gap: 2.5rem !important;
             align-items: start !important;
         }
 
-        /* CARDS GRID - VISIBLE 2-COLUMN LAYOUT */
+        /* ===== CARDS GRID ===== */
         .student-portal-cards {
             display: grid !important;
             grid-template-columns: repeat(2, 1fr) !important;
-            gap: 20px !important;
+            gap: 1.5rem !important;
         }
 
-        /* INDIVIDUAL CARD STYLING - VISIBLE IMPROVEMENTS */
+        /* ===== INDIVIDUAL CARD STYLING ===== */
         .student-portal-card {
             background: #ffffff !important;
-            border: 1px solid #e5e7eb !important;
+            border: 2px solid #e5e7eb !important;
             border-radius: 12px !important;
-            padding: 24px !important;
-            transition: all 0.3s ease !important;
+            padding: 2rem !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
             display: flex !important;
             flex-direction: column !important;
             height: 100% !important;
-            /* Equal height cards */
-            min-height: 160px !important;
+            min-height: 180px !important;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+            text-decoration: none !important;
+            color: inherit !important;
         }
 
         .student-portal-card:hover {
-            transform: translateY(-4px) !important;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+            transform: translateY(-6px) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
             border-color: #3b82f6 !important;
         }
 
         .student-portal-card-icon {
-            width: 48px !important;
-            height: 48px !important;
-            border-radius: 10px !important;
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 12px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            margin-bottom: 16px !important;
+            margin-bottom: 1.25rem !important;
             transition: all 0.3s ease !important;
         }
 
         .student-portal-card:hover .student-portal-card-icon {
-            transform: scale(1.1) !important;
+            transform: scale(1.15) !important;
         }
 
         .student-portal-card h3 {
-            font-size: 1.125rem !important;
+            font-size: 1.25rem !important;
             font-weight: 700 !important;
             color: #111827 !important;
-            margin: 0 0 8px 0 !important;
+            margin: 0 0 0.75rem 0 !important;
+            line-height: 1.4 !important;
         }
 
         .student-portal-card p {
-            font-size: 0.875rem !important;
+            font-size: 0.938rem !important;
             color: #6b7280 !important;
             margin: 0 !important;
-            line-height: 1.5 !important;
+            line-height: 1.6 !important;
         }
 
-        /* SIDEBAR - LOGIN & UPDATES */
+        /* ===== SIDEBAR - LOGIN & UPDATES ===== */
         .student-portal-sidebar {
             display: flex !important;
             flex-direction: column !important;
-            gap: 24px !important;
+            gap: 2rem !important;
         }
 
         .student-portal-login {
             background: #ffffff !important;
-            border: 1px solid #e5e7eb !important;
+            border: 2px solid #e5e7eb !important;
             border-radius: 12px !important;
-            padding: 28px !important;
+            padding: 2rem !important;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
         }
 
         .student-portal-login h3 {
-            font-size: 1.25rem !important;
+            font-size: 1.5rem !important;
             font-weight: 700 !important;
             color: #111827 !important;
-            margin: 0 0 20px 0 !important;
+            margin: 0 0 1.5rem 0 !important;
         }
 
         .student-portal-login label {
             display: block !important;
-            font-size: 0.875rem !important;
+            font-size: 0.938rem !important;
             font-weight: 600 !important;
             color: #374151 !important;
-            margin-bottom: 6px !important;
+            margin-bottom: 0.5rem !important;
         }
 
         .student-portal-login input {
             width: 100% !important;
-            padding: 10px 14px !important;
-            border: 1px solid #d1d5db !important;
+            padding: 0.75rem 1rem !important;
+            border: 2px solid #d1d5db !important;
             border-radius: 8px !important;
-            font-size: 0.875rem !important;
-            margin-bottom: 16px !important;
+            font-size: 0.938rem !important;
+            margin-bottom: 1.25rem !important;
             transition: all 0.2s ease !important;
             box-sizing: border-box !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         .student-portal-login input:focus {
@@ -202,102 +195,89 @@
 
         .student-portal-login button {
             width: 100% !important;
-            padding: 12px !important;
-            background: #3b82f6 !important;
+            padding: 0.875rem !important;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
             color: #ffffff !important;
             border: none !important;
             border-radius: 8px !important;
-            font-size: 0.875rem !important;
+            font-size: 1rem !important;
             font-weight: 600 !important;
             cursor: pointer !important;
-            transition: all 0.2s ease !important;
+            transition: all 0.3s ease !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         .student-portal-login button:hover {
-            background: #2563eb !important;
-            transform: translateY(-1px) !important;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3) !important;
         }
 
         .student-portal-login a {
             display: block !important;
             text-align: center !important;
-            font-size: 0.813rem !important;
+            font-size: 0.875rem !important;
             color: #3b82f6 !important;
-            margin-top: 12px !important;
+            margin-top: 1rem !important;
             text-decoration: none !important;
+            font-weight: 500 !important;
         }
 
         .student-portal-login a:hover {
             text-decoration: underline !important;
+            color: #2563eb !important;
         }
 
-        /* UPDATES SECTION */
+        /* ===== UPDATES SECTION ===== */
         .student-portal-updates {
             background: #ffffff !important;
-            border: 1px solid #e5e7eb !important;
+            border: 2px solid #e5e7eb !important;
             border-radius: 12px !important;
-            padding: 24px !important;
+            padding: 2rem !important;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
         }
 
         .student-portal-updates h3 {
-            font-size: 1.125rem !important;
+            font-size: 1.25rem !important;
             font-weight: 700 !important;
             color: #111827 !important;
-            margin: 0 0 16px 0 !important;
+            margin: 0 0 1.5rem 0 !important;
             display: flex !important;
             align-items: center !important;
-            gap: 8px !important;
+            gap: 0.75rem !important;
         }
 
         .student-portal-update-item {
-            padding: 12px 0 !important;
+            padding: 1rem 0 !important;
             border-bottom: 1px solid #f3f4f6 !important;
         }
 
         .student-portal-update-item:last-child {
             border-bottom: none !important;
+            padding-bottom: 0 !important;
         }
 
         .student-portal-update-date {
-            font-size: 0.75rem !important;
+            font-size: 0.813rem !important;
             color: #9ca3af !important;
-            margin-bottom: 4px !important;
+            margin-bottom: 0.5rem !important;
+            font-weight: 500 !important;
         }
 
         .student-portal-update-link {
-            font-size: 0.875rem !important;
+            font-size: 0.938rem !important;
             font-weight: 600 !important;
             color: #111827 !important;
             text-decoration: none !important;
             display: block !important;
+            transition: color 0.2s ease !important;
         }
 
         .student-portal-update-link:hover {
             color: #3b82f6 !important;
         }
 
-        /* RESPONSIVE - MOBILE STACKING */
-        @media (max-width: 768px) {
-            .student-portal-hero h1 {
-                font-size: 2rem !important;
-            }
-
-            .student-portal-hero p {
-                font-size: 1rem !important;
-            }
-
-            .student-portal-grid {
-                grid-template-columns: 1fr !important;
-            }
-
-            .student-portal-cards {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        /* COLOR CLASSES FOR ICONS */
+        /* ===== COLOR CLASSES FOR ICONS ===== */
         .icon-blue {
             background: #dbeafe !important;
             color: #1e40af !important;
@@ -328,6 +308,7 @@
             color: #374151 !important;
         }
 
+        /* Icon hover color inversions */
         .student-portal-card:hover .icon-blue {
             background: #1e40af !important;
             color: #ffffff !important;
@@ -356,6 +337,80 @@
         .student-portal-card:hover .icon-gray {
             background: #374151 !important;
             color: #ffffff !important;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .student-portal-hero h1 {
+                font-size: 2.5rem !important;
+            }
+
+            .student-portal-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .student-portal-sidebar {
+                order: -1;
+                /* Move sidebar above cards on tablet */
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin-top: 124px !important;
+                /* Maintain spacing on mobile */
+            }
+
+            .student-portal-hero {
+                padding: 3rem 0 2rem 0 !important;
+            }
+
+            .student-portal-hero h1 {
+                font-size: 2rem !important;
+            }
+
+            .student-portal-hero p {
+                font-size: 1rem !important;
+            }
+
+            .student-portal-content {
+                padding: 2.5rem 0 !important;
+            }
+
+            .student-portal-container {
+                padding: 0 1.25rem !important;
+            }
+
+            .student-portal-grid {
+                gap: 2rem !important;
+            }
+
+            .student-portal-cards {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            .student-portal-card {
+                padding: 1.5rem !important;
+                min-height: 160px !important;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        .student-portal-card:focus {
+            outline: 3px solid #3b82f6 !important;
+            outline-offset: 2px !important;
+        }
+
+        .student-portal-login input:focus,
+        .student-portal-login button:focus {
+            outline: 2px solid #3b82f6 !important;
+            outline-offset: 2px !important;
+        }
+
+        /* ===== SMOOTH SCROLLING ===== */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 

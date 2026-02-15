@@ -16,8 +16,334 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
+        /* ========================================
+           ADMISSIONS PAGE-SPECIFIC STYLES
+           Professional, clear, deployment-ready
+        ======================================== */
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .bg-blue-900 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+
+        /* Center header content */
+        .bg-blue-900 h1,
+        .bg-blue-900 p {
+            text-align: center;
+        }
+
+        .bg-blue-900 .max-w-2xl {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Center breadcrumb navigation */
+        .bg-blue-900 nav {
+            justify-content: center;
+        }
+
+        /* ===== SECTION BADGES ===== */
+        .inline-block.px-4.py-2.rounded-full {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.625rem 1.25rem;
+        }
+
+        /* ===== SECTION HEADINGS ===== */
+        h2.text-3xl {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #111827;
+            text-align: center;
+        }
+
+        /* ===== CENTER ALL TEXT CONTENT ===== */
+        section p.text-gray-600,
+        section p.text-lg {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Center section badges */
+        .inline-block.px-4.py-2.rounded-full {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== ADMISSION STEPS SECTION ===== */
+        .admission-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .admission-step {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .admission-step:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+            transform: translateX(4px);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .step-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 0.938rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ===== CATEGORY CARDS SECTION ===== */
+        .category-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 2px solid;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
+        }
+
+        .category-card-a {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-color: #93c5fd;
+        }
+
+        .category-card-b {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-color: #fcd34d;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-card-a:hover {
+            border-color: #3b82f6;
+        }
+
+        .category-card-b:hover {
+            border-color: #f59e0b;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .category-card-a .category-badge {
+            background: #3b82f6;
+            color: #ffffff;
+        }
+
+        .category-card-b .category-badge {
+            background: #f59e0b;
+            color: #ffffff;
+        }
+
+        .category-card h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-card-a h3 {
+            color: #1e40af;
+        }
+
+        .category-card-b h3 {
+            color: #92400e;
+        }
+
+        .category-card .quota-label {
+            font-size: 0.938rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .category-card-a .quota-label {
+            color: #1e40af;
+        }
+
+        .category-card-b .quota-label {
+            color: #92400e;
+        }
+
+        .category-card p {
+            font-size: 0.938rem;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .category-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.938rem;
+            font-weight: 700;
+            transition: gap 0.3s ease;
+            text-decoration: none;
+        }
+
+        .category-card-a a {
+            color: #2563eb;
+        }
+
+        .category-card-b a {
+            color: #d97706;
+        }
+
+        .category-card a:hover {
+            gap: 0.75rem;
+        }
+
+        /* ===== SELECTION CRITERIA CARDS ===== */
+        .selection-criteria-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s ease;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .selection-criteria-item:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            border-color: #e5e7eb;
+        }
+
+        .selection-criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .selection-criteria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== GUIDANCE SIDEBAR ===== */
+        .bg-gray-900.text-white {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .category-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .category-card {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2.text-3xl {
+                font-size: 1.75rem;
+            }
+
+            .admission-step {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .step-number {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+
+            .step-content h3 {
+                font-size: 1.125rem;
+            }
+
+            .category-card {
+                padding: 2rem;
+            }
+
+            .category-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        .admission-step:focus,
+        .category-card:focus {
+            outline: 3px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* ===== SMOOTH ANIMATIONS ===== */
+        * {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 
@@ -50,184 +376,268 @@
             </div>
         </section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid lg:grid-cols-3 gap-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-                <!-- Main Content -->
-                <div class="lg:col-span-2 space-y-16">
+            <!-- Admission Overview -->
+            <section class="mb-20">
+                <p class="text-gray-600 text-lg leading-relaxed max-w-4xl">
+                    Admissions at Dr. K.V. Subba Reddy Institute of Technology are conducted strictly on the basis of
+                    merit, in full compliance with the guidelines established by the Andhra Pradesh State Council of
+                    Higher Education (APSCHE). We are committed to maintaining a transparent, fair, and merit-based
+                    admission process that provides equal opportunities to all eligible candidates.
+                </p>
+            </section>
 
-                    <!-- Admission Process -->
-                    <section>
-                        <div
-                            class="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-6">
-                            Process</div>
-                        <h2 class="text-3xl font-extrabold text-gray-900 mb-8">How to Apply</h2>
-                        <div class="prose text-gray-600 max-w-none space-y-6">
-                            <p>Admissions at KVSRIT are strictly based on merit and the guidelines set by the Andhra
-                                Pradesh State Council of Higher Education (APSCHE).</p>
+            <!-- How to Apply Section -->
+            <section class="mb-20">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-6">
+                    Process</div>
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">How to Apply</h2>
+                <p class="text-gray-600 text-lg mb-10 leading-relaxed max-w-4xl">
+                    The admission process at KVSRIT follows a systematic approach. Please follow these steps carefully
+                    to ensure a smooth admission experience:
+                </p>
 
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="p-8 bg-blue-50 rounded-3xl border border-blue-100">
-                                    <h3 class="text-xl font-bold text-blue-900 mb-4">Category A (70%)</h3>
-                                    <p class="text-sm font-medium text-blue-800 leading-relaxed italic mb-4">Convener
-                                        Quota</p>
-                                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Filled through centralized
-                                        counseling based on ranks secured in EAMCET / ECET / ICET / PGECET.</p>
-                                    <a href="http://apsche.ap.gov.in" target="_blank"
-                                        class="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-3 transition-all">Visit
-                                        APSCHE Portal <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                            <polyline points="15 3 21 3 21 9" />
-                                            <line x1="10" y1="14" x2="21" y2="3" />
-                                        </svg></a>
-                                </div>
-                                <div
-                                    class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm border-t-4 border-t-amber-400">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-4">Category B (30%)</h3>
-                                    <p class="text-sm font-medium text-amber-700 leading-relaxed italic mb-4">Management
-                                        Quota</p>
-                                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Filled directly by the college
-                                        management based on merit and as per APSCHE guidelines.</p>
-                                    <a href="contact.html?subject=CategoryB"
-                                        class="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-3 transition-all">Enquire
-                                        Now <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                            <path d="M5 12h14" />
-                                            <path d="m12 5 7 7-7 7" />
-                                        </svg></a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Programs -->
-                    <section>
-                        <div
-                            class="inline-block px-4 py-2 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-widest mb-6">
-                            Eligibility</div>
-                        <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Selection Criteria</h2>
-                        <div class="space-y-4">
-                            <div
-                                class="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-all flex flex-col md:flex-row gap-6 items-start md:items-center">
-                                <div
-                                    class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-lg">
-                                    UG</div>
-                                <div>
-                                    <h4 class="text-lg font-bold">B.Tech Programs</h4>
-                                    <p class="text-sm text-gray-500">10+2 with MPC. Admission via AP EAMCET rank.</p>
-                                </div>
-                            </div>
-                            <div
-                                class="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-all flex flex-col md:flex-row gap-6 items-start md:items-center">
-                                <div
-                                    class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center flex-shrink-0 text-purple-600 font-bold text-lg">
-                                    PG</div>
-                                <div>
-                                    <h4 class="text-lg font-bold">M.Tech / MBA / MCA</h4>
-                                    <p class="text-sm text-gray-500">Relevant Degree. Admission via GATE / PGECET /
-                                        ICET.</p>
-                                </div>
-                            </div>
-                            <div
-                                class="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-all flex flex-col md:flex-row gap-6 items-start md:items-center">
-                                <div
-                                    class="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 text-amber-600 font-bold text-lg">
-                                    Dip</div>
-                                <div>
-                                    <h4 class="text-lg font-bold">Diploma (Polytechnic)</h4>
-                                    <p class="text-sm text-gray-500">SSC (10th) Grade. Admission via AP POLYCET rank.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- Sidebar -->
-                <div class="space-y-12">
-                    <!-- CTA Card -->
-                    <div class="bg-gray-900 text-white p-10 rounded-[40px] relative overflow-hidden group">
-                        <div
-                            class="absolute top-0 right-0 w-32 h-32 bg-blue-600 opacity-20 filter blur-3xl transform -translate-y-1/2 translate-x-1/2">
-                        </div>
-                        <h3 class="text-2xl font-bold mb-6">Need Guidance?</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-8">Our admission cell is happy to help you
-                            find the right program and guide you through the process.</p>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="w-5 h-5">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                    </svg></div>
-                                <div>
-                                    <div class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Call Us
-                                    </div>
-                                    <div class="font-bold">+91 91000 33333</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="w-5 h-5">
-                                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                    </svg></div>
-                                <div>
-                                    <div class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Email Us
-                                    </div>
-                                    <div class="font-bold uppercase text-xs">admissions@drkvsrit.ac.in</div>
-                                </div>
-                            </div>
+                <!-- Numbered Steps -->
+                <div class="admission-steps">
+                    <!-- Step 1 -->
+                    <div class="admission-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Verify Eligibility Criteria</h3>
+                            <p>Carefully review and confirm that you meet the eligibility requirements for your desired
+                                program (B.Tech, M.Tech, MBA, MCA, or Diploma). Ensure you satisfy the minimum academic
+                                qualifications and entrance examination prerequisites as specified by APSCHE.</p>
                         </div>
                     </div>
 
-                    <!-- Downloads -->
-                    <div class="p-8 rounded-3xl border border-gray-100">
-                        <h3 class="text-lg font-bold mb-6">Documents Required</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 text-sm text-gray-600"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <!-- Step 2 -->
+                    <div class="admission-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Register & Appear for Entrance Examination</h3>
+                            <p>Complete your registration and appear for the appropriate entrance examination as
+                                mandated for your chosen program. This includes AP EAMCET, ECET, ICET, PGECET, GATE, or
+                                POLYCET, depending on the course requirements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="admission-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Participate in Counseling or Apply Directly</h3>
+                            <p><strong>Category A (70% - Convener Quota):</strong> Participate in the centralized online
+                                counseling process conducted through the official APSCHE portal. <strong>Category B (30%
+                                    - Management Quota):</strong> Submit your application directly to the college
+                                administration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="admission-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Document Verification & Submission</h3>
+                            <p>Present all mandatory documents for verification, including your entrance examination
+                                rank card, original academic certificates (SSC & Intermediate), transfer certificate,
+                                recent passport-size photographs, and caste certificate (if applicable). Ensure all
+                                documents are authentic and complete.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="admission-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Fee Payment & Admission Confirmation</h3>
+                            <p>Complete the prescribed fee payment as per the institutional fee structure. Upon
+                                successful payment and completion of all formalities, you will receive your official
+                                admission confirmation letter. Welcome to KVSRIT – your journey towards engineering
+                                excellence begins here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admission Categories Section -->
+            <section class="mb-20">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-purple-50 text-purple-600 text-xs font-bold uppercase tracking-widest mb-6">
+                    Categories</div>
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Admission Categories</h2>
+                <p class="text-gray-600 text-lg mb-10 leading-relaxed max-w-4xl">
+                    In accordance with APSCHE regulations, KVSRIT offers admissions through two distinct categories.
+                    Please identify and proceed with the category applicable to your situation:
+                </p>
+
+                <div class="category-cards-grid">
+                    <!-- Category A Card -->
+                    <div class="category-card category-card-a">
+                        <span class="category-badge">Convener Quota</span>
+                        <h3>Category A (70%)</h3>
+                        <p class="quota-label">Centralized Counseling Process</p>
+                        <p>Seats under this category are allocated through the centralized online counseling process
+                            conducted by APSCHE, based on the merit rank secured in AP EAMCET, ECET, ICET, or PGECET
+                            examinations. Seat allotment is conducted transparently through the official APSCHE
+                            counseling portal.</p>
+                        <a href="http://apsche.ap.gov.in" target="_blank">
+                            Visit APSCHE Portal
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Category B Card -->
+                    <div class="category-card category-card-b">
+                        <span class="category-badge">Management Quota</span>
+                        <h3>Category B (30%)</h3>
+                        <p class="quota-label">Direct Admission Process</p>
+                        <p>Seats under this category are filled directly by the college management on a merit basis, in
+                            strict adherence to APSCHE guidelines and regulations. Eligible candidates may apply
+                            directly to the institution for admission consideration under this quota.</p>
+                        <a href="contact.html?subject=CategoryB">
+                            Enquire Now
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selection Criteria Section -->
+            <section class="mb-20">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-widest mb-6">
+                    Eligibility</div>
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Selection Criteria</h2>
+                <div class="selection-criteria-grid">
+                    <div class="selection-criteria-item">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-lg mb-4">
+                            UG</div>
+                        <div>
+                            <h4 class="text-lg font-bold">B.Tech Programs</h4>
+                            <p class="text-sm text-gray-500">10+2 with MPC. Admission via AP EAMCET rank.</p>
+                        </div>
+                    </div>
+                    <div class="selection-criteria-item">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center flex-shrink-0 text-purple-600 font-bold text-lg mb-4">
+                            PG</div>
+                        <div>
+                            <h4 class="text-lg font-bold">M.Tech / MBA / MCA</h4>
+                            <p class="text-sm text-gray-500">Relevant Degree. Admission via GATE / PGECET / ICET.</p>
+                        </div>
+                    </div>
+                    <div class="selection-criteria-item">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 text-amber-600 font-bold text-lg mb-4">
+                            Dip</div>
+                        <div>
+                            <h4 class="text-lg font-bold">Diploma (Polytechnic)</h4>
+                            <p class="text-sm text-gray-500">SSC (10th) Grade. Admission via AP POLYCET rank.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Help & Documents Section (Side by Side) -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-20">
+                <!-- Need Guidance Card -->
+                <div class="bg-gray-900 text-white p-10 rounded-[40px] relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-blue-600 opacity-20 filter blur-3xl transform -translate-y-1/2 translate-x-1/2">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6">Need Guidance?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">Our admission cell is happy to help you find
+                        the right program and guide you through the process.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg> AP EAMCET/ICET Rank Card</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-linejoin="round" class="w-5 h-5">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Call Us</div>
+                                <div class="font-bold">+91 91000 33333</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg> SSC & Intermediate Memo</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg> Transfer Certificate (TC)</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg> Passport Sized Photos</li>
-                            <li class="flex items-center gap-3 text-sm text-gray-600"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg> Caste Certificate (if applicable)</li>
-                        </ul>
+                                    stroke-linejoin="round" class="w-5 h-5">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Email Us
+                                </div>
+                                <div class="font-bold uppercase text-xs">admissions@drkvsrit.ac.in</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Documents Required Card -->
+                <div class="p-8 rounded-3xl border border-gray-100 bg-white">
+                    <h3 class="text-lg font-bold mb-6">Documents Required</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg> AP EAMCET/ICET Rank Card
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg> SSC & Intermediate Memo
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg> Transfer Certificate (TC)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg> Passport Sized Photos
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 text-emerald-500">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg> Caste Certificate (if applicable)
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+
     </main>
 
     <!-- Footer Placeholder -->
