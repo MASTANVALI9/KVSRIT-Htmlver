@@ -17,8 +17,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar-enhanced.css">
-
-    <!-- Lucide Icons -->
+    <link rel="stylesheet" href="disclosures-layout.css?v=1.0">
 
 </head>
 
@@ -27,320 +26,404 @@
         <!-- Header Injected Here -->
         <div id="navbar-placeholder"></div>
 
-        <main>
-            <div class="min-h-screen bg-gray-50">
-                <!-- Header -->
-                <div class="bg-white border-b border-gray-200 py-20 px-4">
-                    <div class="max-w-7xl mx-auto text-center">
-                        <div
-                            class="w-20 h-20 bg-blue-900 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-900/20">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="w-10 h-10 text-white">
-                                <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z" />
-                                <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z" />
-                                <path d="M7 21h10" />
-                                <path d="M12 3v18" />
-                                <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+        <main class="disclosures-page-wrapper">
+            <!-- Hero Section -->
+            <div class="disclosures-hero">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <!-- Breadcrumb -->
+                    <div class="disclosures-breadcrumb" style="justify-content: center;">
+                        <a href="../index.html">Home</a>
+                        <span>/</span>
+                        <span>Mandatory Disclosures</span>
+                    </div>
+
+                    <!-- Hero Icon -->
+                    <div class="disclosures-hero-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="width: 40px; height: 40px; color: white;">
+                            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z" />
+                            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z" />
+                            <path d="M7 21h10" />
+                            <path d="M12 3v18" />
+                            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+                        </svg>
+                    </div>
+
+                    <!-- Hero Title -->
+                    <h1>Mandatory <span class="disclosures-hero-gradient">Disclosures</span></h1>
+
+                    <!-- Hero Description -->
+                    <p class="disclosures-hero-description">
+                        Transparency and regulatory compliance in accordance with AICTE, JNTUA, and Government of
+                        Andhra Pradesh guidelines.
+                    </p>
+
+                    <!-- Last Updated -->
+                    <div class="disclosures-last-updated">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        Last Updated: February 2024
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="disclosures-container">
+
+                <!-- Section 1: Approvals & Affiliations -->
+                <section class="disclosures-section">
+                    <div class="disclosures-section-header">
+                        <div class="disclosures-section-number blue">1</div>
+                        <h2 class="disclosures-section-title">
+                            <svg class="disclosures-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                        </div>
-                        <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6">Mandatory <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Disclosures</span>
-                        </h1>
-                        <p class="text-xl text-gray-500 max-w-2xl mx-auto">
-                            Transparency and regulatory compliance in accordance with AICTE, JNTUA, and Government of
-                            Andhra Pradesh guidelines.
-                        </p>
+                            Approvals & Affiliations
+                        </h2>
                     </div>
-                </div>
 
-                <div class="max-w-7xl mx-auto px-4 py-16">
-                    <div class="grid lg:grid-cols-3 gap-12">
-                        <!-- Main List -->
-                        <div class="lg:col-span-2 space-y-6">
-                            <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-3 mb-8">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-6 h-6 text-blue-600">
-                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                                    <path d="M14 2v4h4" />
-                                    <path d="M10 9H8" />
-                                    <path d="M16 13H8" />
-                                    <path d="M16 17H8" />
+                    <div class="disclosures-grid">
+                        <!-- AICTE EOA -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge aicte">AICTE</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
-                                Statutory Documents
-                            </h2>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <!-- Document 1 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Approvals
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        AICTE Extension of Approval (EOA) 2024-25</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 2 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Affiliation
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        JNTUA Permanent Affiliation Letter</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 3 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Statutory
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        Grievance Redressal Committee</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 4 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Statutory
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        Internal Complaint Committee (ICC)</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 5 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Statutory
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        SC/ST Committee Details</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 6 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Finance
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        Audited Financial Statements 2023-24</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 7 -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Quality
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        IQAC Annual Report</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Download PDF
-                                    </button>
-                                </div>
-                                <!-- Document 8 (External) -->
-                                <div
-                                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                            Services
-                                        </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-4 h-4 text-gray-300 group-hover:text-blue-500">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                            <polyline points="15 3 21 3 21 9" />
-                                            <line x1="10" x2="21" y1="14" y2="3" />
-                                        </svg>
-                                    </div>
-                                    <h3
-                                        class="font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
-                                        Student Grievance Submission Portal</h3>
-                                    <button class="text-sm font-bold text-blue-600 flex items-center gap-2">
-                                        Access Portal
-                                    </button>
-                                </div>
                             </div>
+                            <h3 class="disclosure-card-title">AICTE Extension of Approval (EOA) 2024-25</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 Valid: 2024-25</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
                         </div>
 
-                        <!-- Sidebar -->
-                        <div class="space-y-8">
-                            <!-- RTI Section -->
-                            <div class="bg-blue-900 rounded-3xl p-8 text-white relative overflow-hidden">
-                                <div class="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl">
-                                </div>
-                                <div class="relative z-10">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="w-10 h-10 text-blue-300 mb-6">
-                                        <path
-                                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-                                    </svg>
-                                    <h3 class="text-2xl font-bold mb-4">Right to Information</h3>
-                                    <p class="text-blue-200 text-sm leading-relaxed mb-6">
-                                        The college complies with the Right to Information Act, 2005. Details regarding
-                                        the public information officer and appellate authority can be found in the
-                                        mandatory disclosures.
-                                    </p>
-                                    <button
-                                        class="w-full bg-white text-blue-900 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="7 10 12 15 17 10" />
-                                            <line x1="12" x2="12" y1="15" y2="3" />
-                                        </svg> Download Act Info
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Anti-Ragging Section -->
-                            <div
-                                class="bg-white rounded-3xl p-8 shadow-xl border border-red-50 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 w-2 h-full bg-red-500"></div>
-                                <div class="relative z-10">
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Anti-Ragging Committee</h3>
-                                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                                        KVSRIT maintains a zero-tolerance policy towards ragging. We have a robust
-                                        anti-ragging committee in place to ensure student safety.
-                                    </p>
-                                    <div class="space-y-3 bg-red-50 p-4 rounded-2xl border border-red-100">
-                                        <div class="flex flex-col">
-                                            <span class="text-[10px] font-bold text-red-600 uppercase">Toll Free
-                                                Helpline</span>
-                                            <span class="text-lg font-black text-gray-900">1800-180-5522</span>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="text-[10px] font-bold text-red-600 uppercase">Email
-                                                Support</span>
-                                            <span
-                                                class="text-sm font-bold text-gray-900">antiragging@drkvsrit.ac.in</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Info Note -->
-                            <div class="bg-amber-50 rounded-3xl p-6 border border-amber-100 flex gap-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="w-6 h-6 text-amber-600 flex-shrink-0">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <path d="M12 16v-4" />
-                                    <path d="M12 8h.01" />
+                        <!-- JNTUA Affiliation -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge jntua">JNTUA</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
-                                <p class="text-sm text-amber-800 font-medium">
-                                    For archival data older than 3 years, please submit a written request to the
-                                    Administrative Office.
+                            </div>
+                            <h3 class="disclosure-card-title">JNTUA Permanent Affiliation Letter</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 Permanent</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Statutory Committees -->
+                <section class="disclosures-section">
+                    <div class="disclosures-section-header">
+                        <div class="disclosures-section-number green">2</div>
+                        <h2 class="disclosures-section-title">
+                            <svg class="disclosures-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            Statutory Committees
+                        </h2>
+                    </div>
+
+                    <div class="disclosures-grid">
+                        <!-- Grievance Redressal -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge statutory">Statutory</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="disclosure-card-title">Grievance Redressal Committee</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 Updated: 2024</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+
+                        <!-- ICC -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge statutory">Statutory</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="disclosure-card-title">Internal Complaint Committee (ICC)</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 Updated: 2024</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+
+                        <!-- SC/ST Committee -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge statutory">Statutory</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="disclosure-card-title">SC/ST Committee Details</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 Updated: 2024</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+
+                        <!-- Anti-Ragging (Integrated) -->
+                        <div class="disclosure-card" style="grid-column: 1 / -1;">
+                            <div class="anti-ragging-card" style="padding: 2rem;">
+                                <h3 style="margin-bottom: 1rem;">Anti-Ragging Committee</h3>
+                                <p style="margin-bottom: 1.5rem;">
+                                    KVSRIT maintains a zero-tolerance policy towards ragging. We have a robust
+                                    anti-ragging committee in place to ensure student safety.
                                 </p>
+                                <div class="anti-ragging-contacts">
+                                    <div class="anti-ragging-contact-item">
+                                        <span class="anti-ragging-contact-label">Toll Free Helpline</span>
+                                        <span class="anti-ragging-contact-value">1800-180-5522</span>
+                                    </div>
+                                    <div class="anti-ragging-contact-item">
+                                        <span class="anti-ragging-contact-label">Email Support</span>
+                                        <span class="anti-ragging-contact-value">antiragging@drkvsrit.ac.in</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Section 3: Financial & Administrative -->
+                <section class="disclosures-section">
+                    <div class="disclosures-section-header">
+                        <div class="disclosures-section-number purple">3</div>
+                        <h2 class="disclosures-section-title">
+                            <svg class="disclosures-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Financial & Administrative
+                        </h2>
+                    </div>
+
+                    <div class="disclosures-grid">
+                        <!-- Financial Statements -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge finance">Finance</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="disclosure-card-title">Audited Financial Statements 2023-24</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 FY 2023-24</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Quality Assurance -->
+                <section class="disclosures-section">
+                    <div class="disclosures-section-header">
+                        <div class="disclosures-section-number orange">4</div>
+                        <h2 class="disclosures-section-title">
+                            <svg class="disclosures-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                            Quality Assurance
+                        </h2>
+                    </div>
+
+                    <div class="disclosures-grid">
+                        <!-- IQAC Report -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge quality">Quality</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="disclosure-card-title">IQAC Annual Report</h3>
+                            <div class="disclosure-card-meta">
+                                <span>📄 PDF Document</span>
+                                <span>📅 Annual</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Right to Information -->
+                <section class="disclosures-section">
+                    <div class="disclosures-section-header">
+                        <div class="disclosures-section-number indigo">5</div>
+                        <h2 class="disclosures-section-title">
+                            <svg class="disclosures-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Right to Information (RTI)
+                        </h2>
+                    </div>
+
+                    <div class="rti-section-card">
+                        <svg class="rti-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z" />
+                        </svg>
+                        <h3>Right to Information Act, 2005</h3>
+                        <p>
+                            The college complies with the Right to Information Act, 2005. Details regarding the public
+                            information officer and appellate authority are available for transparency and
+                            accountability.
+                        </p>
+                        <div class="rti-info-grid">
+                            <div class="rti-info-item">
+                                <div class="rti-info-label">Public Information Officer</div>
+                                <div class="rti-info-value">Dr. K. Ramesh Kumar</div>
+                            </div>
+                            <div class="rti-info-item">
+                                <div class="rti-info-label">Contact Email</div>
+                                <div class="rti-info-value">rti@drkvsrit.ac.in</div>
+                            </div>
+                        </div>
+                        <a href="#" class="rti-action-button">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                style="width: 20px; height: 20px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download RTI Guidelines
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Section 6: Student Services -->
+                <section class="disclosures-section">
+                    <div class="disclosures-section-header">
+                        <div class="disclosures-section-number red">6</div>
+                        <h2 class="disclosures-section-title">
+                            <svg class="disclosures-section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                            </svg>
+                            Student Services
+                        </h2>
+                    </div>
+
+                    <div class="disclosures-grid">
+                        <!-- Student Grievance Portal -->
+                        <div class="disclosure-card">
+                            <div class="disclosure-card-header">
+                                <span class="disclosure-authority-badge services">Services</span>
+                                <svg class="disclosure-download-icon" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </div>
+                            <h3 class="disclosure-card-title">Student Grievance Submission Portal</h3>
+                            <div class="disclosure-card-meta">
+                                <span>🌐 Online Portal</span>
+                                <span>📅 24/7 Available</span>
+                            </div>
+                            <a href="#" class="disclosure-card-action">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Access Portal
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Archival Notice -->
+                <div class="disclosure-notice">
+                    <svg class="disclosure-notice-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="disclosure-notice-text">
+                        For archival data older than 3 years, please submit a written request to the Administrative
+                        Office at admin@drkvsrit.ac.in or visit the college office during working hours.
+                    </p>
                 </div>
+
             </div>
         </main>
 
@@ -353,9 +436,7 @@
     <script src="../assets/js/components.js"></script>
     <script>window.rootPath = '../';</script>
     <script src="../assets/js/main.js"></script>
-    <script>
 
-    </script>
 </body>
 
 </html>

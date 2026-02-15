@@ -19,8 +19,280 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
+        /* ========================================
+           CONTACT PAGE-SPECIFIC STYLES
+           Professional, balanced, deployment-ready
+        ======================================== */
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .bg-gray-100 {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        /* Breadcrumb styling */
+        nav.flex.items-center {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        /* Page title */
+        h1.text-4xl {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== MAIN CONTENT SECTION ===== */
+        section.py-24 {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+
+        /* Container max-width */
+        .max-w-7xl {
+            max-width: 1280px;
+        }
+
+        /* ===== GRID LAYOUT ===== */
+        .grid.lg\:grid-cols-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* ===== CONTACT FORM SECTION ===== */
+        .space-y-12>div:first-child h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .space-y-12>div:first-child p {
+            font-size: 1.063rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Form styling */
+        form.space-y-6 {
+            background: #f9fafb;
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 2px solid #e5e7eb;
+        }
+
+        form label {
+            font-size: 0.813rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        form button[type="submit"] {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: #ffffff;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        form button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* ===== CONTACT INFO CARDS ===== */
+        .grid.sm\:grid-cols-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Individual contact cards */
+        .p-8.bg-blue-50,
+        .p-8.bg-emerald-50,
+        .p-8.bg-amber-50,
+        .p-8.bg-purple-50 {
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+        }
+
+        .p-8.bg-blue-50 {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-color: #bfdbfe;
+        }
+
+        .p-8.bg-emerald-50 {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-color: #a7f3d0;
+        }
+
+        .p-8.bg-amber-50 {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-color: #fde68a;
+        }
+
+        .p-8.bg-purple-50 {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border-color: #e9d5ff;
+        }
+
+        .p-8.bg-blue-50:hover,
+        .p-8.bg-emerald-50:hover,
+        .p-8.bg-amber-50:hover,
+        .p-8.bg-purple-50:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Icon containers */
+        .w-12.h-12.rounded-2xl {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .p-8:hover .w-12.h-12.rounded-2xl {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Card headings */
+        .p-8 h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Card text */
+        .p-8 p {
+            font-size: 0.938rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* ===== MAP SECTION ===== */
+        .rounded-\[40px\] {
+            border-radius: 24px;
+            border: 2px solid #e5e7eb;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+            min-height: 400px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .grid.lg\:grid-cols-2 {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .grid.sm\:grid-cols-2 {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            section.py-24 {
+                padding: 3.5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1.text-4xl {
+                font-size: 2rem;
+            }
+
+            .space-y-12>div:first-child h2 {
+                font-size: 1.5rem;
+            }
+
+            form.space-y-6 {
+                padding: 1.75rem;
+            }
+
+            .p-8.bg-blue-50,
+            .p-8.bg-emerald-50,
+            .p-8.bg-amber-50,
+            .p-8.bg-purple-50 {
+                padding: 1.5rem;
+                min-height: 160px;
+            }
+
+            .aspect-video {
+                min-height: 300px;
+            }
+
+            form button[type="submit"] {
+                width: 100%;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        form input:focus,
+        form select:focus,
+        form textarea:focus,
+        form button:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* ===== SMOOTH ANIMATIONS ===== */
+        * {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 
@@ -47,6 +319,8 @@
                     <span class="text-gray-900">Contact Us</span>
                 </nav>
                 <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Let's Connect</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl">We're here to help! Whether you have questions about
+                    admissions, programs, or campus life, our team is ready to assist you.</p>
             </div>
         </section>
 
@@ -101,6 +375,7 @@
                     <!-- Contact Details & Map -->
                     <div class="space-y-12">
                         <div class="grid sm:grid-cols-2 gap-8">
+                            <!-- Call Us Card -->
                             <div class="p-8 bg-blue-50 rounded-[40px] border border-blue-100">
                                 <div
                                     class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center mb-6">
@@ -114,6 +389,8 @@
                                 <h4 class="font-bold mb-2">Call Us</h4>
                                 <p class="text-sm text-blue-900">+91 91000 33333</p>
                             </div>
+
+                            <!-- Email Us Card -->
                             <div class="p-8 bg-emerald-50 rounded-[40px] border border-emerald-100">
                                 <div
                                     class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6">
@@ -126,6 +403,37 @@
                                 </div>
                                 <h4 class="font-bold mb-2">Email Us</h4>
                                 <p class="text-sm text-emerald-900 uppercase">office@drkvsrit.ac.in</p>
+                            </div>
+
+                            <!-- Address Card -->
+                            <div class="p-8 bg-amber-50 rounded-[40px] border border-amber-100">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center mb-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-6 h-6">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold mb-2">Visit Us</h4>
+                                <p class="text-sm text-amber-900">Dupadu, Kurnool District<br>Andhra Pradesh - 518218
+                                </p>
+                            </div>
+
+                            <!-- Office Hours Card -->
+                            <div class="p-8 bg-purple-50 rounded-[40px] border border-purple-100">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-purple-600 text-white flex items-center justify-center mb-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-6 h-6">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold mb-2">Office Hours</h4>
+                                <p class="text-sm text-purple-900">Mon - Sat: 9:00 AM - 5:00 PM<br>Sunday: Closed</p>
                             </div>
                         </div>
 
