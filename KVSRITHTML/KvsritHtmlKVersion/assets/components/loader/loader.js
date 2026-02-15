@@ -20,7 +20,7 @@
     ];
 
     // Duration Configuration (ms)
-    const DURATION = 3000;
+    const DURATION = 2000;
     const QUOTE_INTERVAL = 1000;
 
     // DOM Elements

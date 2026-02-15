@@ -123,11 +123,9 @@
     background: rgba(255, 255, 255, 1);
     transition: box-shadow var(--transition-medium), background-color var(--transition-medium);
     height: var(--navbar-height);
-    /* Enforce height */
     min-height: 80px;
-    /* Prevent shrinking */
-    max-height: 80px;
-    /* Prevent expansion */
+    display: flex;
+    align-items: center;
 }
 
 /* Scroll State (Applied via JS) */
@@ -140,6 +138,9 @@
 /* Inner Flex Container */
 #nav-inner {
     height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 /* Logo Alignment */
@@ -402,6 +403,7 @@
 /* Primary Action Button (Apply Now) */
 #main-nav a[href*="admissions"].bg-blue-600 {
     background: linear-gradient(135deg, var(--color-accent) 0%, #1d4ed8 100%);
+    color: #ffffff !important;
     padding: 10px 24px;
     border-radius: 30px;
     /* Pill shape */
@@ -410,12 +412,13 @@
     font-size: 13px;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
 }
 
 #main-nav a[href*="admissions"].bg-blue-600:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    color: #ffffff !important;
 }
 
 /* Search Icon */

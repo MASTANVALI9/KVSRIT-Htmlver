@@ -67,8 +67,7 @@
                 <div class="loader-ring-inner"></div>
             </div>
 
-            <!-- Upper Core (Small 'K' circle) -->
-            <div class="loader-core"></div>
+            <!-- Upper Core removed -->
 
             <!-- Loading Text -->
             <div class="loader-text">
@@ -92,26 +91,85 @@
 
     <main>
         <!-- News Ticker -->
-        <div class="bg-blue-50 py-3 overflow-hidden border-b border-blue-100">
-            <div class="max-w-7xl mx-auto px-4 flex items-center">
-                <div
-                    class="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mr-4 z-10 whitespace-nowrap">
-                    Latest News</div>
-                <div class="animate-marquee whitespace-nowrap text-sm font-medium text-blue-900 italic">
-                    • Admissions Open for 2024-25 • NAAC A+ Accredited Institution • Highest Placement Package of 15 LPA
-                    • Last date for application extended to March 31st •
-                </div>
+        <div style="background-color:#eff6ff;padding:12px 0;overflow:hidden;border-bottom:1px solid #dbeafe;">
+            <div
+                style="display:inline-flex;align-items:center;gap:12px;white-space:nowrap;animation:tickerSlide 18s linear infinite;">
+                <span
+                    style="background:#2563eb;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 12px;border-radius:9999px;">Latest
+                    News</span>
+                <span style="font-size:14px;font-weight:500;color:#1e3a8a;font-style:italic;">• Admissions Open for
+                    2024-25 • NAAC A+ Accredited Institution • Highest Placement Package of 15 LPA • Last date for
+                    application extended to March 31st •</span>
             </div>
+            <style>
+                @keyframes tickerSlide {
+                    0% {
+                        transform: translateX(100vw);
+                    }
+
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+            </style>
         </div>
 
-        <!-- Hero Section (Carousel/Interactive) -->
-        <section class="relative h-[650px] overflow-hidden">
-            <div class="absolute inset-0">
-                <img src="images/hero/hero-1.png" alt="Campus" class="w-full h-full object-cover">
-                <div class="absolute inset-0 gradient-overlay"></div>
+        <!-- Hero Section (Auto-Sliding Image Carousel) -->
+        <style>
+            .hero-slider {
+                position: relative;
+                width: 100%;
+                height: 650px;
+                overflow: hidden;
+            }
+
+            .hero-track {
+                display: flex;
+                width: 400%;
+                height: 100%;
+                transition: transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+
+            .hero-slide {
+                position: relative;
+                width: 25%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+
+            .hero-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+        <section class="hero-slider" id="heroSlider">
+            <div class="hero-track" id="heroTrack">
+                <!-- Slide 1 (4th image - Logo, shown first) -->
+                <div class="hero-slide">
+                    <img src="images/hero/slide-4.jpg" alt="KVSRIT Logo">
+                    <div class="absolute inset-0 gradient-overlay"></div>
+                </div>
+                <!-- Slide 2 (1st image - Campus Grounds) -->
+                <div class="hero-slide">
+                    <img src="images/hero/slide-1.jpg" alt="KVSRIT Campus Grounds">
+                    <div class="absolute inset-0 gradient-overlay"></div>
+                </div>
+                <!-- Slide 3 (2nd image - College Entrance) -->
+                <div class="hero-slide">
+                    <img src="images/hero/slide-2.jpg" alt="KVSRIT College Entrance">
+                    <div class="absolute inset-0 gradient-overlay"></div>
+                </div>
+                <!-- Slide 4 (3rd image - Courtyard) -->
+                <div class="hero-slide">
+                    <img src="images/hero/slide-3.jpg" alt="KVSRIT Courtyard">
+                    <div class="absolute inset-0 gradient-overlay"></div>
+                </div>
             </div>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+            <!-- Hero Content Overlay -->
+            <div
+                style="position:absolute;inset:0;z-index:10;display:flex;align-items:center;max-width:80rem;margin:0 auto;padding:0 1rem;">
                 <div class="max-w-2xl text-white space-y-6">
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-bold uppercase tracking-widest text-blue-200">
@@ -141,7 +199,8 @@
             </div>
 
             <!-- Quick Stats Floating bar -->
-            <div class="absolute bottom-0 left-0 w-full glass py-8 border-t-0 border-x-0 hidden md:block">
+            <div class="absolute bottom-0 left-0 w-full glass py-8 border-t-0 border-x-0 hidden md:block"
+                style="position:absolute;bottom:0;left:0;width:100%;z-index:10;">
                 <div class="max-w-7xl mx-auto px-4 grid grid-cols-4 gap-8">
                     <div class="text-center">
                         <div class="text-3xl font-extrabold text-white">15+</div>
@@ -162,6 +221,29 @@
                 </div>
             </div>
         </section>
+
+        <!-- Hero Slider Script -->
+        <script>
+            (function () {
+                const track = document.getElementById('heroTrack');
+                const totalSlides = 4;
+                let current = 0;
+                setInterval(function () {
+                    current++;
+                    if (current >= totalSlides) {
+                        // Jump back to first slide instantly after last
+                        track.style.transition = 'none';
+                        current = 0;
+                        track.style.transform = 'translateX(0)';
+                        // Force reflow, then re-enable transition for next slide
+                        track.offsetHeight;
+                        track.style.transition = 'transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1)';
+                    } else {
+                        track.style.transform = 'translateX(-' + (current * 25) + '%)';
+                    }
+                }, 4000);
+            })();
+        </script>
         <!-- Latest News & Updates Section -->
         <section class="news-section" id="news-updates">
             <div class="container">
@@ -173,88 +255,443 @@
 
                 <!-- News Content Grid -->
                 <div class="news-grid">
-                    <!-- Left Side: Scrolling News Text -->
+                    <!-- Left Side: Tabbed Announcements Table -->
                     <div class="news-text-container">
-                        <div class="news-header">
-                            <h3>📰 Recent Announcements</h3>
+                        <!-- Tab Navigation -->
+                        <div
+                            style="display:flex;flex-wrap:nowrap;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:0;width:100%;">
+                            <button class="ann-tab active" data-tab="news-events"
+                                style="flex:1;padding:8px 6px;font-size:11px;font-weight:600;background:#2563eb;color:#fff;border:1px solid #d1d5db;border-bottom:none;cursor:pointer;border-radius:6px 6px 0 0;transition:all 0.2s;white-space:nowrap;text-align:center;">News
+                                & Events</button>
+                            <button class="ann-tab" data-tab="examination"
+                                style="flex:1;padding:8px 6px;font-size:11px;font-weight:600;background:#f9fafb;color:#374151;border:1px solid #d1d5db;border-bottom:none;cursor:pointer;border-radius:6px 6px 0 0;transition:all 0.2s;white-space:nowrap;text-align:center;">Examination</button>
+                            <button class="ann-tab" data-tab="placements"
+                                style="flex:1;padding:8px 6px;font-size:11px;font-weight:600;background:#f9fafb;color:#374151;border:1px solid #d1d5db;border-bottom:none;cursor:pointer;border-radius:6px 6px 0 0;transition:all 0.2s;white-space:nowrap;text-align:center;">Placements</button>
+                            <button class="ann-tab" data-tab="admissions"
+                                style="flex:1;padding:8px 6px;font-size:11px;font-weight:600;background:#f9fafb;color:#374151;border:1px solid #d1d5db;border-bottom:none;cursor:pointer;border-radius:6px 6px 0 0;transition:all 0.2s;white-space:nowrap;text-align:center;">Admissions</button>
+                            <button class="ann-tab" data-tab="forums"
+                                style="flex:1;padding:8px 6px;font-size:11px;font-weight:600;background:#f9fafb;color:#374151;border:1px solid #d1d5db;border-bottom:none;cursor:pointer;border-radius:6px 6px 0 0;transition:all 0.2s;white-space:nowrap;text-align:center;">Forum
+                                Activities</button>
                         </div>
-                        <div class="news-scroll-wrapper">
-                            <div class="news-scroll-content" id="newsScrollContent">
-                                <!-- News Item 1 -->
-                                <div class="news-item">
-                                    <div class="news-badge">New</div>
-                                    <h4 class="news-title">Admissions Open for 2024-25</h4>
-                                    <p class="news-date">📅 January 25, 2026</p>
-                                    <p class="news-description">Applications are now open for B.Tech, M.Tech, and MBA
-                                        programs. Last date to apply is March 31st, 2026.</p>
-                                    <a href="#" class="news-link">Read more →</a>
-                                </div>
 
-                                <!-- News Item 2 -->
-                                <div class="news-item">
-                                    <div class="news-badge important">Important</div>
-                                    <h4 class="news-title">NAAC A+ Accreditation Achieved</h4>
-                                    <p class="news-date">📅 January 20, 2026</p>
-                                    <p class="news-description">KVSRIT has been awarded NAAC A+ grade, recognizing our
-                                        commitment to academic excellence and quality education.</p>
-                                    <a href="#" class="news-link">Read more →</a>
-                                </div>
+                        <!-- Tab Content Panels -->
+                        <div style="border:1px solid #d1d5db;border-top:none;background:#fff;height:420px;overflow:hidden;position:relative;"
+                            id="annTabContent">
 
-                                <!-- News Item 3 -->
-                                <div class="news-item">
-                                    <h4 class="news-title">Highest Placement Package of 15 LPA</h4>
-                                    <p class="news-date">📅 January 15, 2026</p>
-                                    <p class="news-description">Our students secured excellent placement offers with the
-                                        highest package reaching 15 LPA from top tech companies.</p>
-                                    <a href="#" class="news-link">Read more →</a>
+                            <!-- News & Events Tab -->
+                            <div class="ann-panel active" id="panel-news-events" style="height:100%;overflow:hidden;">
+                                <div style="padding:14px 20px;border-bottom:1px solid #e5e7eb;background:#f0f4ff;">
+                                    <h4 style="font-size:15px;font-weight:700;color:#1e3a8a;margin:0;">Student Forms /
+                                        Club Activities:</h4>
                                 </div>
-
-                                <!-- News Item 4 -->
-                                <div class="news-item">
-                                    <h4 class="news-title">Technical Symposium 2026 Announced</h4>
-                                    <p class="news-date">📅 January 10, 2026</p>
-                                    <p class="news-description">Annual technical symposium scheduled for February 15-16,
-                                        2026. Students from across the state are invited to participate.</p>
-                                    <a href="#" class="news-link">Read more →</a>
+                                <div class="ann-scroll-inner" style="transition:transform 0.8s ease;">
+                                    <!-- Entry 1 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">11-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Ignasa Event
+                                            Gallery <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 2 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">25-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Admissions
+                                            Open for Academic Year 2025-2026. Apply now! <a href="admissions.html"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 3 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">20-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">NAAC A+
+                                            Accreditation achieved with 3.30 CGPA <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 4 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">15-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">IEEE Student
+                                            Chapter Organizing Workshop on "AI & Machine Learning" on 20-01-2026 <a
+                                                href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 5 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">10-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Technical
+                                            Symposium 2026 scheduled for February 15-16 <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 6 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">05-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">CSI Student
+                                            Chapter Organizing "Tech Probe" on 10-01-2026 <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 7 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">28-12-2025</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">ISTE of KVSRIT
+                                            Organizing "MetaVerse" on 05-01-2026 <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
+                                    <!-- Entry 8 -->
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">20-12-2025</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">
+                                            Inter-departmental Sports Meet 2026, Register before Jan 31st <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a></p>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <!-- News Item 5 -->
-                                <div class="news-item">
-                                    <h4 class="news-title">New Research Lab Inaugurated</h4>
-                                    <p class="news-date">📅 January 5, 2026</p>
-                                    <p class="news-description">State-of-the-art AI & Machine Learning research lab
-                                        inaugurated with advanced computing facilities.</p>
-                                    <a href="#" class="news-link">Read more →</a>
+                            <!-- Examination Tab -->
+                            <div class="ann-panel" id="panel-examination"
+                                style="display:none;height:100%;overflow:hidden;">
+                                <div style="padding:14px 20px;border-bottom:1px solid #e5e7eb;background:#f0f4ff;">
+                                    <h4 style="font-size:15px;font-weight:700;color:#1e3a8a;margin:0;">Examination
+                                        Notifications:</h4>
                                 </div>
-
-                                <!-- News Item 6 -->
-                                <div class="news-item">
-                                    <h4 class="news-title">Industry Expert Lecture Series</h4>
-                                    <p class="news-date">📅 December 28, 2025</p>
-                                    <p class="news-description">Monthly lecture series featuring industry experts from
-                                        leading tech companies begins next month.</p>
-                                    <a href="#" class="news-link">Read more →</a>
+                                <div class="ann-scroll-inner" style="transition:transform 0.8s ease;">
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">10-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Mid Semester
+                                            Examination Schedule Released <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">01-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Internal
+                                            Assessment marks uploaded - Verify on Student Portal <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <!-- News Item 7 -->
-                                <div class="news-item">
-                                    <h4 class="news-title">Sports Meet 2026 Registration Open</h4>
-                                    <p class="news-date">📅 December 20, 2025</p>
-                                    <p class="news-description">Inter-departmental sports meet registration is now open.
-                                        Register before January 31st, 2026.</p>
-                                    <a href="#" class="news-link">Read more →</a>
+                            <!-- Placements Tab -->
+                            <div class="ann-panel" id="panel-placements"
+                                style="display:none;height:100%;overflow:hidden;">
+                                <div style="padding:14px 20px;border-bottom:1px solid #e5e7eb;background:#f0f4ff;">
+                                    <h4 style="font-size:15px;font-weight:700;color:#1e3a8a;margin:0;">Placement Drives:
+                                    </h4>
                                 </div>
+                                <div class="ann-scroll-inner" style="transition:transform 0.8s ease;">
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">08-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">TCS Campus
+                                            Recruitment Drive on 15-02-2026 <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">01-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Infosys Hiring
+                                            Drive - Register before 10-02-2026 <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-                                <!-- News Item 8 -->
-                                <div class="news-item">
-                                    <h4 class="news-title">Scholarship Applications Extended</h4>
-                                    <p class="news-date">📅 December 15, 2025</p>
-                                    <p class="news-description">Merit-based scholarship application deadline extended to
-                                        February 15th, 2026.</p>
-                                    <a href="#" class="news-link">Read more →</a>
+                            <!-- Admissions Tab -->
+                            <div class="ann-panel" id="panel-admissions"
+                                style="display:none;height:100%;overflow:hidden;">
+                                <div style="padding:14px 20px;border-bottom:1px solid #e5e7eb;background:#f0f4ff;">
+                                    <h4 style="font-size:15px;font-weight:700;color:#1e3a8a;margin:0;">Admission
+                                        Updates:</h4>
+                                </div>
+                                <div class="ann-scroll-inner" style="transition:transform 0.8s ease;">
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">25-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Admissions
+                                            Open
+                                            2025-26 – B.Tech, M.Tech, MBA, MCA <a href="admissions.html"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">15-12-2025</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">Scholarship
+                                            applications deadline extended to Feb 15th <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Forum Activities Tab -->
+                            <div class="ann-panel" id="panel-forums" style="display:none;height:100%;overflow:hidden;">
+                                <div style="padding:14px 20px;border-bottom:1px solid #e5e7eb;background:#f0f4ff;">
+                                    <h4 style="font-size:15px;font-weight:700;color:#1e3a8a;margin:0;">Forum Activities:
+                                    </h4>
+                                </div>
+                                <div class="ann-scroll-inner" style="transition:transform 0.8s ease;">
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">10-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">IEEE Student
+                                            Branch - Workshop on "Deep Learning & Neural Networks" <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">05-02-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">ISTE Chapter -
+                                            Faculty Development Program on "Emerging Technologies" <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">28-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">CSI Student
+                                            Branch
+                                            - Coding Contest "Code Sprint 2026" <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">20-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">IETE Student
+                                            Forum
+                                            - Technical Talk on "5G & Beyond" <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">12-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">IEEE & CSI
+                                            Joint
+                                            Event - Hackathon "InnoVate 2026" <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
+                                    <div style="padding:14px 20px;border-bottom:1px solid #f3f4f6;">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                            <span style="color:#ea580c;font-size:16px;">🔥</span>
+                                            <span
+                                                style="font-weight:700;color:#1e3a8a;font-size:14px;">05-01-2026</span>
+                                        </div>
+                                        <p style="margin:0;font-size:13px;color:#374151;line-height:1.5;">ISTE Chapter -
+                                            Seminar on "Sustainable Engineering Practices" <a href="#"
+                                                style="color:#2563eb;font-weight:600;text-decoration:none;">Click
+                                                Here</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Tab Switching + Smooth Continuous Auto-Scroll Script -->
+                        <script>
+                            (function () {
+                                var tabs = document.querySelectorAll('.ann-tab');
+                                var panels = document.querySelectorAll('.ann-panel');
+                                var container = document.getElementById('annTabContent');
+                                var animId = null;
+                                var isPaused = false;
+                                var pauseAtBottom = false;
+                                var pauseTimer = null;
+
+                                function getActivePanel() {
+                                    for (var i = 0; i < panels.length; i++) {
+                                        if (panels[i].classList.contains('active')) return panels[i];
+                                    }
+                                    return panels[0];
+                                }
+
+                                function smoothScroll() {
+                                    if (isPaused || pauseAtBottom) return;
+                                    var p = getActivePanel();
+                                    if (!p) return;
+                                    p.style.overflowY = 'auto';
+                                    // Hide scrollbar
+                                    p.style.scrollbarWidth = 'none';
+                                    p.style.msOverflowStyle = 'none';
+
+                                    var maxScroll = p.scrollHeight - p.clientHeight;
+                                    if (maxScroll <= 0) {
+                                        animId = requestAnimationFrame(smoothScroll);
+                                        return;
+                                    }
+
+                                    if (p.scrollTop >= maxScroll - 1) {
+                                        // Reached bottom — pause 2s then reset
+                                        pauseAtBottom = true;
+                                        pauseTimer = setTimeout(function () {
+                                            p.scrollTop = 0;
+                                            pauseAtBottom = false;
+                                            animId = requestAnimationFrame(smoothScroll);
+                                        }, 2000);
+                                        return;
+                                    }
+
+                                    // Scroll slowly: ~0.5px per frame = ~30px/sec at 60fps
+                                    p.scrollTop += 0.5;
+                                    animId = requestAnimationFrame(smoothScroll);
+                                }
+
+                                function startAutoScroll() {
+                                    stopAutoScroll();
+                                    isPaused = false;
+                                    pauseAtBottom = false;
+                                    var p = getActivePanel();
+                                    if (p) {
+                                        p.style.overflowY = 'auto';
+                                        p.style.scrollbarWidth = 'none';
+                                        p.scrollTop = 0;
+                                    }
+                                    animId = requestAnimationFrame(smoothScroll);
+                                }
+
+                                function stopAutoScroll() {
+                                    if (animId) cancelAnimationFrame(animId);
+                                    if (pauseTimer) clearTimeout(pauseTimer);
+                                    animId = null;
+                                    pauseTimer = null;
+                                }
+
+                                // Pause on hover
+                                if (container) {
+                                    container.addEventListener('mouseenter', function () {
+                                        isPaused = true;
+                                        stopAutoScroll();
+                                    });
+                                    container.addEventListener('mouseleave', function () {
+                                        isPaused = false;
+                                        pauseAtBottom = false;
+                                        animId = requestAnimationFrame(smoothScroll);
+                                    });
+                                }
+
+                                // Tab switching
+                                tabs.forEach(function (tab) {
+                                    tab.addEventListener('click', function () {
+                                        tabs.forEach(function (t) {
+                                            t.style.background = '#f9fafb';
+                                            t.style.color = '#374151';
+                                            t.classList.remove('active');
+                                        });
+                                        panels.forEach(function (p) {
+                                            p.style.display = 'none';
+                                            p.classList.remove('active');
+                                        });
+                                        tab.style.background = '#2563eb';
+                                        tab.style.color = '#fff';
+                                        tab.classList.add('active');
+                                        var tp = document.getElementById('panel-' + tab.getAttribute('data-tab'));
+                                        if (tp) {
+                                            tp.style.display = 'block';
+                                            tp.classList.add('active');
+                                        }
+                                        startAutoScroll();
+                                    });
+                                });
+
+                                // Hide scrollbar via CSS
+                                var style = document.createElement('style');
+                                style.textContent = '.ann-panel::-webkit-scrollbar { display: none; }';
+                                document.head.appendChild(style);
+
+                                // Start on load
+                                startAutoScroll();
+                            })();
+                        </script>
                     </div>
 
                     <!-- Right Side: Scrolling Images -->
@@ -567,8 +1004,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">Data
-                                Science (DS)</h4>
+                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">CSE
+                                (DS)</h4>
                             <p class="text-sm text-gray-500 font-medium mt-2">4 Years • B.Tech</p>
                         </div>
                     </a>
@@ -598,11 +1035,11 @@
                     <a href="departments/ai-only/index.html"
                         class="group relative overflow-hidden rounded-3xl p-8 bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-6 aspect-[4/5] hover:-translate-y-1">
                         <div
-                            class="w-20 h-20 rounded-2xl bg-violet-50 flex items-center justify-center group-hover:bg-violet-600 transition-colors duration-300">
+                            class="w-20 h-20 rounded-2xl bg-indigo-50 flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="w-10 h-10 text-violet-600 group-hover:text-white transition-colors duration-300">
+                                class="w-10 h-10 text-indigo-600 group-hover:text-white transition-colors duration-300">
                                 <path
                                     d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
                                 <path
@@ -617,7 +1054,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-violet-600 transition-colors">
+                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
                                 Artificial Intelligence (AI)</h4>
                             <p class="text-sm text-gray-500 font-medium mt-2">4 Years • B.Tech</p>
                         </div>
