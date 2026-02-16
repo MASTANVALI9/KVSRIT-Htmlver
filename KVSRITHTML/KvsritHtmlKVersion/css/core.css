@@ -75,6 +75,8 @@
 
     /* Accessibility Overrides */
     --text-accessible-blue: var(--primary);
+    --text-accessible-emerald: #047857;
+    --text-accessible-amber: #b45309;
     --text-accessible-gold: #856404;
     /* Darker gold for text readability */
 }
@@ -204,6 +206,19 @@ a {
 
 .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Responsive Grid Columns */
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 /* Gap */
@@ -434,6 +449,26 @@ a {
     height: 5rem;
 }
 
+.h-48 {
+    height: 12rem;
+}
+
+.h-64 {
+    height: 16rem;
+}
+
+.h-72 {
+    height: 18rem;
+}
+
+.h-80 {
+    height: 20rem;
+}
+
+.h-96 {
+    height: 24rem;
+}
+
 .h-56 {
     height: 14rem;
 }
@@ -556,6 +591,16 @@ a {
     padding-bottom: 2.5rem;
 }
 
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
 .py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -658,8 +703,16 @@ a {
     margin-top: 2rem;
 }
 
+.mt-10 {
+    margin-top: 2.5rem;
+}
+
 .mt-12 {
     margin-top: 3rem;
+}
+
+.mt-16 {
+    margin-top: 4rem;
 }
 
 .mb-2 {
@@ -997,11 +1050,23 @@ a {
     color: var(--text-accessible-emerald);
 }
 
+.text-emerald-700 {
+    color: var(--text-accessible-emerald);
+}
+
+.text-emerald-800 {
+    color: #064e3b;
+}
+
 .text-amber-500 {
     color: var(--text-accessible-amber);
 }
 
 .text-amber-600 {
+    color: var(--text-accessible-amber);
+}
+
+.text-amber-700 {
     color: var(--text-accessible-amber);
 }
 
