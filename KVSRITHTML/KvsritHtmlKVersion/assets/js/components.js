@@ -13,8 +13,8 @@ const NAVBAR_HTML = `
 <div class="bg-blue-900 text-white py-2 text-xs hidden md:block">
   <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
     <div class="flex items-center gap-4">
-      <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 91000 33333</span>
-      <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> office@drkvsrit.ac.in</span>
+      <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 9704333789,  7660003345(TPO)</span>
+      <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> drkvsr.principal@gmail.com</span>
     </div>
     <div class="flex items-center gap-4">
       <a href="mandatory-disclosures/index.html" class="hover:text-blue-300">Mandatory Disclosures</a>
@@ -76,8 +76,8 @@ const NAVBAR_HTML = `
           <div role="menu"
             class="absolute left-0 mt-0 w-64 bg-white border border-gray-100 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]">
             <div class="py-2">
-              <a href="admissions.html#procedure" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Admissions Procedure</a>
-              <a href="admissions.html#criteria" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Criteria for Admission</a>
+              <a href="admissions-procedure/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Admissions Procedure</a>
+              <a href="criteria-for-admission/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Criteria for Admission</a>
               <a href="admissions.html#programs" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Programs Offered</a>
               <a href="admissions.html#fee" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Fee Structure</a>
               <a href="admissions.html#scholarships" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Scholarships</a>
@@ -311,11 +311,11 @@ const FOOTER_HTML = `
           </li>
           <li class="flex items-center gap-4">
             <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <p class="text-gray-400">+91 91000 33333</p>
+            <p class="text-gray-400">9704333789, 9440006717, 7660003345(TPO)</p>
           </li>
           <li class="flex items-center gap-4">
             <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accent"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-            <p class="text-gray-400">office@drkvsrit.ac.in</p>
+            <p class="text-gray-400">drkvsr.principal@gmail.com</p>
           </li>
         </ul>
       </div>
@@ -366,12 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const isAffiliation = /\/affiliation-and-accreditation\//.test(normalizedPath);
       const isAdministration = /\/administration\//.test(normalizedPath);
       const isAcademicCouncil = /\/academic-council\//.test(normalizedPath);
+      const isAdmissionsProcedure = /\/admissions-procedure\//.test(normalizedPath);
+      const isCriteriaForAdmission = /\/criteria-for-admission\//.test(normalizedPath);
 
       // Multi-level nesting check (e.g. departments/cse/index.html)
       const deptMatch = normalizedPath.match(/\/departments\/([^\/]+)\//);
       if (deptMatch) return '../../';
 
-      if (isDept || isAbout || isAcademics || isCampus || isPlacements || isStudentPortal || isCourses || isVisionMission || isAffiliation || isAdministration || isAcademicCouncil) {
+      if (isDept || isAbout || isAcademics || isCampus || isPlacements || isStudentPortal || isCourses || isVisionMission || isAffiliation || isAdministration || isAcademicCouncil || isAdmissionsProcedure || isCriteriaForAdmission) {
         return '../';
       }
       return './';

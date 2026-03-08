@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criteria for Admission | KVSRIT</title>
+    <link rel="stylesheet" href="../css/core.css" />
+    <link rel="stylesheet" href="../css/navbar-enhanced.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Mobile Responsive CSS -->
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ========================================
+           ADMISSIONS PAGE-SPECIFIC STYLES
+           Professional, clear, deployment-ready
+        ======================================== */
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      /* ===== PAGE HEADER ===== */
+      .bg-blue-900 {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      }
+
+      /* Center header content */
+      .bg-blue-900 h1,
+      .bg-blue-900 p {
+        text-align: center;
+      }
+
+      .bg-blue-900 .max-w-2xl {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Center breadcrumb navigation */
+      .bg-blue-900 nav {
+        justify-content: center;
+      }
+
+      /* ===== SECTION BADGES ===== */
+      .inline-block.px-4.py-2.rounded-full {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 0.625rem 1.25rem;
+      }
+
+      /* ===== SECTION HEADINGS ===== */
+      h2.text-3xl {
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #111827;
+        text-align: center;
+      }
+
+      /* ===== CENTER ALL TEXT CONTENT ===== */
+      section p.text-gray-600,
+      section p.text-lg {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Center section badges */
+      .inline-block.px-4.py-2.rounded-full {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ===== ADMISSION STEPS SECTION ===== */
+      .admission-steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .admission-step {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: #ffffff;
+        border: 2px solid #e5e7eb;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .admission-step:hover {
+        border-color: #3b82f6;
+        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+        transform: translateX(4px);
+      }
+
+      .step-number {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+
+      .step-content h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-content p {
+        font-size: 0.938rem;
+        color: #6b7280;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* ===== CATEGORY CARDS SECTION ===== */
+      .category-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .category-card {
+        padding: 2.5rem;
+        border-radius: 24px;
+        border: 2px solid;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        min-height: 320px;
+      }
+
+      .category-card-a {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border-color: #93c5fd;
+      }
+
+      .category-card-b {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        border-color: #fcd34d;
+      }
+
+      .category-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      .category-card-a:hover {
+        border-color: #3b82f6;
+      }
+
+      .category-card-b:hover {
+        border-color: #f59e0b;
+      }
+
+      .category-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+      }
+
+      .category-card-a .category-badge {
+        background: #3b82f6;
+        color: #ffffff;
+      }
+
+      .category-card-b .category-badge {
+        background: #f59e0b;
+        color: #ffffff;
+      }
+
+      .category-card h3 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+      }
+
+      .category-card-a h3 {
+        color: #1e40af;
+      }
+
+      .category-card-b h3 {
+        color: #92400e;
+      }
+
+      .category-card .quota-label {
+        font-size: 0.938rem;
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .category-card-a .quota-label {
+        color: #1e40af;
+      }
+
+      .category-card-b .quota-label {
+        color: #92400e;
+      }
+
+      .category-card p {
+        font-size: 0.938rem;
+        line-height: 1.6;
+        color: #4b5563;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .category-card a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.938rem;
+        font-weight: 700;
+        transition: gap 0.3s ease;
+        text-decoration: none;
+      }
+
+      .category-card-a a {
+        color: #2563eb;
+      }
+
+      .category-card-b a {
+        color: #d97706;
+      }
+
+      .category-card a:hover {
+        gap: 0.75rem;
+      }
+
+      /* ===== SELECTION CRITERIA CARDS ===== */
+      .selection-criteria-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        background: #ffffff;
+        border: 1px solid #f3f4f6;
+        transition: all 0.3s ease;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .selection-criteria-item:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+        border-color: #e5e7eb;
+      }
+
+      .selection-criteria-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .selection-criteria-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== GUIDANCE SIDEBAR ===== */
+      .bg-gray-900.text-white {
+        background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+      }
+
+      /* ===== RESPONSIVE DESIGN ===== */
+      @media (max-width: 1024px) {
+        .category-cards-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .category-card {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h2.text-3xl {
+          font-size: 1.75rem;
+        }
+
+        .admission-step {
+          flex-direction: column;
+          padding: 1.5rem;
+        }
+
+        .step-number {
+          width: 48px;
+          height: 48px;
+          font-size: 1.25rem;
+        }
+
+        .step-content h3 {
+          font-size: 1.125rem;
+        }
+
+        .category-card {
+          padding: 2rem;
+        }
+
+        .category-card h3 {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* ===== ACCESSIBILITY ===== */
+      .admission-step:focus,
+      .category-card:focus {
+        outline: 3px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      /* ===== SMOOTH ANIMATIONS ===== */
+      * {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+      <!-- Page Header -->
+      <section class="bg-blue-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav
+            class="flex items-center gap-2 text-blue-300 text-xs font-bold uppercase tracking-widest mb-4"
+          >
+            <a href="../index.html" class="hover:text-white transition-colors"
+              >Home</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-3 h-3"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+            <span class="text-white">Criteria for Admission</span>
+          </nav>
+          <h1 class="text-4xl font-bold mb-4">Criteria for Admission</h1>
+          <p class="text-blue-100 text-lg max-w-2xl leading-relaxed">
+            Start your journey towards engineering excellence with Dr. K.V.
+            Subba Reddy Institute of Technology.
+          </p>
+        </div>
+      </section>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Admissions Data from Website -->
+        <section class="mb-16 text-left">
+          <style>
+            /* Override center text from main css */
+            .text-left-override p,
+            .text-left-override h3,
+            .text-left-override h4,
+            .text-left-override li,
+            .text-left-override span {
+              text-align: left !important;
+              margin-left: 0 !important;
+              margin-right: 0 !important;
+            }
+
+            .text-left-override h2 {
+              text-align: left !important;
+            }
+
+            .text-left-override ul {
+              list-style-position: inside;
+            }
+          </style>
+          <div class="text-left-override max-w-5xl mx-auto space-y-12">
+            <div class="mb-8">
+              <img
+                src="../images/drkvsrit_pages/admissions/KR.png"
+                alt="Admission Image"
+                class="w-full rounded-2xl shadow-md object-cover max-h-[400px]"
+              />
+            </div>
+
+            <!-- ADMISSION CRITERIA & PROCEDURE -->
+            <div id="criteria">
+              <div class="mb-8 pb-12">
+                <img
+                  src="../images/drkvsrit_pages/admissions/redert.jpg"
+                  alt="Admission Criteria Image"
+                  class="w-full rounded-2xl shadow-md object-cover max-h-[400px]"
+                />
+              </div>
+              <h2
+                class="text-3xl font-bold text-blue-900 border-b-2 border-blue-900 pb-2 mb-6"
+              >
+                ADMISSION CRITERIA & PROCEDURE:
+              </h2>
+
+              <div class="mb-8 pb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                  Admission Policy for UG Programme:
+                </h3>
+                <p class="text-gray-700 text-base mb-3 leading-relaxed">
+                  Admissions to the Institute are made along with the other
+                  Engineering colleges in the state through a common entrance
+                  test (EAMCET) conducted by the Govt. of Andhra Pradesh State.
+                </p>
+                <p class="text-gray-700 text-base mb-4 leading-relaxed">
+                  The admission pattern to B. Tech is as follows: The minimum
+                  qualification for admission to the first year of the B. Tech
+                  course is a pass in the Intermediate (10 + 2) conducted by the
+                  board of Intermediate Education, Govt. of Andhra Pradesh State
+                  or any other examination recognized as equivalent thereto with
+                  Mathematics, Physics, and Chemistry as optional subjects.
+                </p>
+
+                <ul
+                  class="list-decimal pl-6 space-y-2 text-gray-700 text-base mb-4"
+                >
+                  <li>
+                    70 % of the seats are allotted based on the merit in the
+                    EAMCET.
+                  </li>
+                  <li>
+                    30 % of the seats are earmarked for Management/NRI
+                    candidates.
+                  </li>
+                  <li>
+                    In addition to the above, Diploma holders are admitted in
+                    the second year of B. Tech to the extent of 20% of intake
+                    based on the merit in the ECET, under lateral entry scheme.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mb-8 pb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                  Admission Policy for PG Programs:
+                </h3>
+
+                <h4 class="text-xl font-bold text-gray-900 mb-3">
+                  PG Engineering & Technology Courses:
+                </h4>
+                <p class="text-gray-700 text-base mb-4 leading-relaxed">
+                  The eligibility criteria for admission to following courses of
+                  M.Tech is:
+                </p>
+
+                <ul
+                  class="list-decimal pl-6 space-y-3 text-gray-700 text-base mb-6"
+                >
+                  <li>
+                    <strong
+                      >M.Tech – Digital Electronics and Communication
+                      Systems:</strong
+                    >
+                    B.E/ B. Tech in ECE branch of Engineering with valid GATE
+                    score / based on the rank obtained in the Test conducted by
+                    JNTU.
+                  </li>
+                  <li>
+                    <strong>M.Tech – Computer science engineering:</strong> B.E/
+                    B. Tech in CSE / branch of Engineering with valid GATE score
+                    / based on the rank obtained in the Test conducted by JNTU.
+                  </li>
+                  <li>
+                    <strong
+                      >M.Tech – Power Electronics and Electric Drives:</strong
+                    >
+                    B.E/ B. Tech in EEE branch of Engineering with valid GATE
+                    score / based on the rank obtained in the Test conducted by
+                    JNTU.
+                  </li>
+                  <li>
+                    <strong>M.Tech – Embedded Systems:</strong> B.E/ B. Tech in
+                    ECE / EEE / CSE / IT / EIE branch of Engineering with valid
+                    GATE score / based on the rank obtained in the Test
+                    conducted by JNTU.
+                  </li>
+                  <li>
+                    <strong>M.Tech in Mechanical Engineering:</strong> B.E/ B.
+                    Tech in Mechanical Engineering Branch with valid score /
+                    based on the rank obtained in the Test conducted by JNTU.
+                  </li>
+                  <li>
+                    <strong>M.Tech – Structural Engineering:</strong> B.E/ B.
+                    Tech in Civil Branch of Engineering with valid GATE score /
+                    based on the rank obtained in the Test conducted by JNTU.
+                  </li>
+                </ul>
+
+                <h4 class="text-xl font-bold text-gray-900 mb-3">
+                  PG Management Courses:
+                </h4>
+                <p class="text-gray-700 text-base mb-3 leading-relaxed">
+                  The admission pattern to MBA courses are as follows:
+                </p>
+                <p class="text-gray-700 text-base mb-3 leading-relaxed">
+                  The minimum qualification for admission to the first year of
+                  the MBA is a pass in the undergraduate course (10 + 2 + 3).
+                </p>
+                <p class="text-gray-700 text-base mb-3 leading-relaxed">
+                  Entrance exam for MBA is ICET.
+                </p>
+              </div>
+            </div>
+
+            <!-- Document Retention Policy -->
+            <div class="mb-8">
+              <h2
+                class="text-3xl font-bold text-blue-900 border-b-2 border-blue-900 pb-2 mb-6"
+              >
+                Document Retention Policy:
+              </h2>
+              <p class="text-gray-700 text-base mb-3 leading-relaxed">
+                The Document Retention Policy is as per the guidelines of AICTE.
+              </p>
+              <p class="text-gray-700 text-base mb-4 leading-relaxed">
+                The Original certificates of the students, who discontinue with
+                their courses, will not be retained by the Institution in
+                accordance with the guidelines of AICTE.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <a
+                  href="https://drkvsrit.ac.in/wp-content/uploads/2020/06/Office-Procedure-AICTE.pdf"
+                  target="_blank"
+                  class="text-blue-600 font-bold hover:underline flex items-center gap-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  Office Procedure - AICTE
+                </a>
+                <a
+                  href="https://drkvsrit.ac.in/wp-content/uploads/2020/06/Circular-from-AICTE.pdf"
+                  target="_blank"
+                  class="text-blue-600 font-bold hover:underline flex items-center gap-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  Circular from AICTE
+                </a>
+              </div>
+            </div>
+
+            <!-- Rules of Reservation -->
+            <div class="mb-8">
+              <h2
+                class="text-3xl font-bold text-blue-900 border-b-2 border-blue-900 pb-2 mb-6"
+              >
+                Rules of Reservation:
+              </h2>
+              <p class="text-gray-700 text-base mb-4 leading-relaxed">
+                Reservation rules are as per the norms of AP State Government
+                and Central government of India.
+              </p>
+              <a
+                href="https://drkvsrit.ac.in/wp-content/uploads/2020/06/Rules-of-Reservation.pdf"
+                target="_blank"
+                class="text-blue-600 font-bold hover:underline"
+                >Click here for a detailed description of the Reservation
+                Rules.</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/components.js"></script>
+  </body>
+</html>
