@@ -477,87 +477,95 @@ window.APP_DATA = {
         ]
     },
     research: {
+        mission: "To establish a world-class research ecosystem that fosters innovation, multidisciplinary collaboration, and transformative solutions for societal challenges.",
+        stats: [
+            { label: 'Research Papers', value: '180+' },
+            { label: 'Patents Filed', value: '15' },
+            { label: 'Research Projects', value: '50+' },
+            { label: 'Industry Partners', value: '25+' }
+        ],
         areas: [
             {
                 title: 'Artificial Intelligence & ML',
-                description: 'Deep learning, NLP, computer vision, and intelligent systems research.',
+                description: 'Deep learning, NLP, computer vision, and intelligent systems research. We focus on developing AI solutions for healthcare, agriculture, and smart manufacturing.',
                 icon: 'cpu',
                 projects: 15,
-                color: 'from-blue-500 to-cyan-400'
+                color: 'from-indigo-600 to-blue-500',
+                image: 'images/research/ai-lab.png'
             },
             {
                 title: 'Internet of Things',
-                description: 'Smart systems, sensor networks, and embedded computing solutions.',
+                description: 'Smart systems, sensor networks, and embedded computing solutions. Our research includes building self-sustaining IoT node networks for rural connectivity.',
                 icon: 'globe',
                 projects: 12,
-                color: 'from-purple-500 to-pink-400'
+                color: 'from-purple-600 to-pink-500',
+                image: 'images/research/iot-campus.png'
             },
             {
                 title: 'Renewable Energy',
-                description: 'Solar power systems, energy efficiency, and sustainable technologies.',
+                description: 'Solar power systems, energy efficiency, and sustainable technologies. Dedicated to creating high-efficiency solar tracking systems and smart grid integration.',
                 icon: 'zap',
                 projects: 8,
-                color: 'from-emerald-500 to-teal-400'
+                color: 'from-emerald-600 to-teal-500',
+                image: 'images/research/energy-center.png'
             },
             {
                 title: 'Biotechnology',
-                description: 'Biomedical devices, healthcare technology, and life sciences.',
+                description: 'Biomedical devices, healthcare technology, and life sciences. Researching low-cost diagnostic tools and smart healthcare monitoring systems.',
                 icon: 'microscope',
                 projects: 10,
-                color: 'from-rose-500 to-red-400'
+                color: 'from-rose-600 to-red-500',
+                image: 'images/research/ai-lab.png'
             }
         ],
         featuredProjects: [
             {
                 title: 'Smart Campus IoT System',
-                description: 'An integrated IoT system for monitoring campus utilities, security, and environment.',
+                description: 'An integrated IoT system for monitoring campus utilities, security, and environment with real-time data visualization.',
                 department: 'Computer Science',
-                team: 'Final Year B.Tech',
+                team: 'R&D Cell',
                 status: 'Completed',
-                award: 'Best Project Award 2024'
+                award: 'Best Innovation 2024',
+                image: 'images/research/iot-campus.png'
             },
             {
-                title: 'AI-Powered Crop Disease Detection',
-                description: 'Using deep learning to identify crop diseases from images for early intervention.',
+                title: 'AI Crop Disease Detection',
+                description: 'Using deep learning models to identify crop diseases from leaf images, providing early intervention for local farmers.',
                 department: 'CSE (AI/ML)',
                 team: 'Research Team',
                 status: 'Ongoing',
-                award: null
+                award: 'State Research Grant',
+                image: 'images/research/ai-lab.png'
             },
             {
-                title: 'Solar-Powered E-Vehicle',
-                description: 'Design and development of a solar-assisted electric vehicle prototype.',
+                title: 'Hybrid Solar-Wind System',
+                description: 'Development of an optimized hybrid energy generation system for off-grid institutional requirements.',
                 department: 'Mechanical & EEE',
-                team: 'Interdisciplinary Team',
+                team: 'Energy Group',
                 status: 'Prototype Ready',
-                award: 'Innovation Award 2023'
+                award: 'Sustainability Award',
+                image: 'images/research/energy-center.png'
             }
         ],
         publications: [
             {
                 title: 'Deep Learning Approaches for Medical Image Analysis',
                 authors: 'Dr. A. Suresh, Dr. B. Ramesh',
-                journal: 'International Journal of Computer Science',
+                journal: 'International Journal of AI in Medicine',
                 year: 2024
             },
             {
-                title: 'IoT-Based Smart Agriculture System',
+                title: 'IoT-Based Smart Agriculture System with Edge Computing',
                 authors: 'Prof. C. Krishna, Research Team',
-                journal: 'IEEE Conference on Emerging Technologies',
+                journal: 'IEEE Internet of Things Journal',
                 year: 2024
             },
             {
                 title: 'Renewable Energy Integration in Smart Grids',
                 authors: 'Dr. D. Srinivas, Dr. E. Venkat',
-                journal: 'Journal of Sustainable Energy',
+                journal: 'Sustainable Energy Technologies',
                 year: 2023
             }
-        ],
-        stats: [
-            { label: 'Research Papers', value: '150+' },
-            { label: 'Patents Filed', value: '12' },
-            { label: 'Research Projects', value: '45+' },
-            { label: 'Industry Collaborations', value: '20+' }
         ]
     },
     academicPrograms: {
